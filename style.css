@@ -3,41 +3,48 @@
   src: url("assets/3892.ttf");
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background-image:url("assets/back.png");
+  background-color:  #c8d5f1;
+  background-position: center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  min-height:100vh;
+}
+
 #curtain1 {
-  width: 22%;
-  height: 60%;
-  position: absolute;
-  left: 260px;
-  top: 0px;
+  width: 30%;
+  height: 80%;
+  position: fixed;
+  left: -10px;
+  top: 0;
   transform: scaleX(-1);
 }
 
 #curtain2 {
-  width: 22%;
-  height: 60%;
-  position: absolute;
-  right: 225px;
-  top: 0px;
+  width: 30%;
+  height: 80%;
+  position: fixed;
+  right: 0;
+  top: 0;
 } 
 
 .container {
   width: 900px;
   height: 600px;
-  border-radius: -2px;
-  position: relative;
-}
-
-html, body, #main {  
-  width: 100%;
-  height: 100%;
-  background-image: url("assets/back.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #c8d5f1;
-}
-
-* {
-  margin: 0px;  
+  border-radius: 2px;
+  position: fixed;
+  margin-top: 16%;
+  margin-left: 15%;
 }
 
 .cloud1 {
@@ -49,9 +56,11 @@ html, body, #main {
 }
 
 #rect {
-  width: 185px;	
-  height: 72px;	
-  background-image: url("assets/blackBoard.png");	
+  width: 250px;
+  height: 96px;
+  background-image: url("assets/blackBoard.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 0px;
   position: absolute;
   top: 128px; 
@@ -61,96 +70,225 @@ html, body, #main {
 #text1 {
   position:absolute;
   top: 60%;
-  left: 50%;
+  left: 40%;
   margin: 0px auto;
-  transform: translate(-60%, -30%);
+
   font: 20pt 'Chalk';
   color: white;
 }
 
 #input1 {
-  position: absolute;
-  transform: translate(-125px, 10px);
+  position: fixed;
+  margin-top: 35%;
+  margin-left: -10%;
   font: 14pt monospace;
   visibility: hidden;
 }
 
 #button1 {
-  position: absolute;
-  transform: translate(60px,  5px);
-  box-shadow: 3px 3px 0px 6px #387955; 
-  background: #449669; 
-  border-radius: 10px; 
-  display: inline-block; 
-  cursor: pointer; 
-  color: rgb(255, 255, 255); 
-  font-family: monospace; 
-  font-size: 14pt; 
-  padding: 6px 24px; 
-  text-decoration: none; 
+  position: fixed;
+  margin-top: 35%;
+  margin-left: 2%;
+  box-shadow: 3px 3px 0px 6px #387955;
+  background: #449669;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  padding: 6px 24px;
   visibility: hidden;
 }
 
+#button2, #button3 {
+  position: fixed;
+  margin-top: 35%;
+  margin-left: -10%;
+  visibility: visible;
+  box-shadow: 3px 3px 0px 6px #387955;
+  background: #449669;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 20pt;
+  padding: 6px 24px;
+
+}
+
 #score {
-  position: absolute;
-  transform: translate(680px, -590px);
-  font: 20pt monospace;
+  position: fixed;
+  margin-top: 11%;
+  margin-left: 46%;
+  font: 18pt 'Chalk';
   color: white;
   visibility: hidden;
 }
 
 #heart1, #heart2, #heart3 {
-    position: relative;
-    visibility: hidden;
+  position: fixed;
+  margin-top: 5%;
+  margin-left: 40%;
+  visibility: hidden;
+  padding-left: 3%;
 }
-
-#button2 {
-  position: absolute;
-  transform: translate( 260px, -52px);
-  visibility: visible;
-  box-shadow: 3px 3px 0px 6px #387955; 
-  background: #449669; 
-  border-radius: 10px; 
-  display: inline-block; 
-  cursor: pointer; 
-  color: rgb(255, 255, 255); 
-  font-family: monospace; 
-  font-size: 20pt; 
-  padding: 6px 24px; 
-  text-decoration: none; 
+#heart2 {
+  margin-left: 45%;
 }
-
-#button3 {
-  position: absolute;
-  transform: translate( 260px, -52px);
-  visibility: visible;
-  box-shadow: 3px 3px 0px 6px #387955; 
-  background: #449669; 
-  border-radius: 10px; 
-  display: inline-block; 
-  cursor: pointer; 
-  color: rgb(255, 255, 255); 
-  font-family: monospace; 
-  font-size: 20pt; 
-  padding: 6px 24px; 
-  text-decoration: none; 
-}
-
-#score {
-  transform: translate(1200px, -590px);
-  color: #2f6647;
+#heart3 {
+  margin-left: 50%;
 }
 
 #gameOver {
-  position: absolute;
-  align-self: center;
-  transform: translate(85%, -840px);
+  position: fixed;
+  margin-top: -20%;
   visibility: hidden;
   font: 30pt monospace;
   color: white;
   background-color: #559b75;
 }
+#gameScreen {
+  position: fixed;
+  margin-left: -30%;
+  margin-top: 54%;
+  width: 900px;
+  height: 293px;
+}
 
 canvas {
   transform: translate(-20px, -500px);
+}
+
+#warning-message { display:none; }
+
+@media only screen and (orientation: portrait) {
+  #warning-message {
+    display:block;
+    font-size: 15vw;
+    color: white;
+    text-align: center;
+    margin-top: 30%;
+  }
+  body {
+    background-image: none;
+  }
+  #wrapper {display: none;}
+
+}
+@media only screen and  (max-width: 1400px) and (orientation: landscape) {
+  #button1 {
+    margin-top: 35%;
+    margin-left: 10%;
+  }
+  #button2, #button3 {
+    margin-top: 35%;
+    margin-left: -20%;
+  }
+  #input1 {
+    margin-top: 35%;
+    margin-left: -15%;
+  }
+  #score {
+    margin-top: 12%;
+    margin-left: 45%;
+    font-size: 15pt;
+  }
+  .container {
+    width: 900px;
+    margin-left: -10%;
+    margin-top: 2%;
+  }
+  #gameScreen {
+    margin-top: 78%;
+    margin-left: -50%;
+    width: 770px;
+    height: 250px;
+  }
+  #rect {
+    width: 200px;
+    height: 77px;
+  }
+  #text1 {
+    left: 30%;
+  }
+  #curtain1 {
+    width: 38%;
+    left: -8%;
+    top: 0;
+  }
+  #curtain2 {
+    width: 38%;
+    left: 70%;
+    top: 0;
+  }
+  #score {
+    font-size: 12pt;
+  }
+}
+@media (min-width: 810px) and (max-width: 825px) and (orientation: landscape) {
+  #gameScreen {
+    margin-top: 70%;
+  }
+  .container {
+    margin-top: 3%;
+  }
+  #button1, #button2, #button3, #input1 {
+    margin-top: 30%;
+  }
+  #curtain1, #curtain2 {
+    height: 87%;
+  }
+  #score {
+    margin-top: 8%;
+  }
+  #heart1, #heart2, #heart3 {
+    margin-top: 3%;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1400px) and (orientation: landscape) {
+  #button1, #button2, #button3, #input1 {
+    margin-top: 46%;
+    margin-left: -15%;
+  }
+  #button1 {
+    margin-left: 5%;
+  }
+  #score {
+    margin-top: 20%;
+    font-size: 16pt;
+  }
+  #heart1, #heart2, #heart3 {
+    margin-top: 15%;
+  }
+  .container {
+    margin-top: 25%;
+    margin-left: -7%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) and (orientation: landscape) {
+  #gameScreen {
+    margin-left: -26%;
+    margin-top: 70%;
+  }
+  .container {
+    margin-top: 30%;
+    margin-left: 19%;
+  }
+  #curtain1, #curtain2 {
+    width: 55%;
+  }
+  #curtain1 {
+    left: -10%;
+  }
+  #curtain2 {
+    left: 55%;
+  }
+  #button1, #button2, #button3, #input1 {
+    margin-top: 46%;
+    margin-left: -10%;
+  }
+  #button1 {
+    margin-left: 5%;
+  }
 }

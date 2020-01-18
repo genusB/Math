@@ -34,20 +34,12 @@ let samples = [sample1, sample2, sample3, sample4, sample5, sample6];
 let current_i = 0;
 let saveLife = false;
 
-
-document.getElementById('container').appendChild(heart2);
-document.getElementById('container').appendChild(heart3);
-
-heart1.style.transform = "translate(-580px, -600px)";
-heart2.style.transform = "translate(-510px, -603px)";
-heart3.style.transform = "translate(-440px, -655px)";
-
 let clY = -728;
 
 let gameScore = 0;
 let cl_timeout = 100;
 
-let cl_speed = 0.5; //cloud speed 
+let cl_speed = 0.5; //cloud speed
 let cl_maxI = 300;  //iterations count 
 let cl_opacity = 10; //primary opacity 
 let cl_opStep = 0.00825; //opacity reduce step 
@@ -64,7 +56,7 @@ function start() {
   gameScore = 0;
   score.innerHTML = "Rachunak: 0";
   cl_timeout = 100;
-  cl_speed = 0.5; 
+  cl_speed = 0.5;
   cl_maxI = 300;   
   cl_opacity = 10;  
   cl_opStep = 0.00825;
@@ -144,11 +136,11 @@ let x;
 
 function submit() {
 
-  if (submitVerify == true){    
+  if (submitVerify == true){
              
       if (cl_i == 0){x = 13;} else {x = cl_i - 1;}
     
-      if (answers[current_i] == input1.value) {                   
+      if (answers[current_i] == input1.value) {
         
         flagVerify = true;
         gameScore += 1;
@@ -240,11 +232,19 @@ function teslaMove(speed, opacityStep, time)
     let currentLoopIndex = 0;
     let frameCount;
     let moveLeft = 0;
+    let clearPoint = 2.4;
 
+    let speedStep = 0.0057;
+
+    if(window.matchMedia("(max-width: 1400px) and (orientation: landscape)").matches) {
+        speedStep = 0.0062;
+        clearPoint = 2.5;
+    }
     function step() {
-      frameCount++;
+        frameCount++;
 
-      moveLeft += speed * 0.0062;
+        moveLeft += speed * speedStep;
+
 
       if(frameCount < 10)
       {
@@ -252,7 +252,7 @@ function teslaMove(speed, opacityStep, time)
         return;
       }  
 
-      if(moveLeft >= 2.5)
+      if(moveLeft >= clearPoint)
       {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         return;

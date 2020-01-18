@@ -2,39 +2,17 @@
 <html lang="en" >
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tesla one love</title>
     <link rel="stylesheet" href="./style.css">
     <link rel = "icon" href = "assets/icon.png" type = "image/x-icon"> 
   </head>
 
   <body id="body">
-    <center>
-      <div class="container" id="container">
+    <div id="wrapper" style="text-align: center;">
 
-        <svg id="main" viewBox="0 0 2347.32 1549.9"> 
-          <div></div> 
-        </svg>
+      <div id = "score">Rachunak: 0</div>
 
-        <div class = "cloud1" id = "cloud1">
-          <div class = "cloud_1" id = "cloud_1"></div>
-          <div id = "rect"></div>
-          <div id = "text1">5+7+9</div>
-        </div>
-      </div>
-          
-      <input id="input1" 
-        type="text" 
-        size="15" 
-        oninput="validateInput(this)" 
-        maxlength="10" 
-        onkeydown = "if (event.keyCode == 13)
-        document.getElementById('button1').click()"
-        disabled="disabled"
-        />
-          
-      <span class="button1" id="button1" onclick="submit()">Tak</span>  
-       
-      <div id = "score">Rachunak: 0</div>  
       <div id = "heart1">
         <img src="assets/live.png" alt="" width="50px" height="50">
       </div>
@@ -45,20 +23,45 @@
         <img src="assets/live.png" alt="" width="50px" height="50">
       </div>
 
+      <div class="container" id="container">
+        <svg id="main" viewBox="0 0 2347.32 1549.9">
+        </svg>
+
+        <div class = "cloud1" id = "cloud1">
+          <div class = "cloud_1" id = "cloud_1"></div>
+          <div id = "rect"></div>
+          <div id = "text1">5+7+9</div>
+        </div>
+      </div>
+      <canvas id = "gameScreen" width="770" height="250"></canvas>
+      <input id="input1" 
+        type="text" 
+        size="15" 
+        oninput="validateInput(this)" 
+        maxlength="10" 
+        onkeydown = "if (event.keyCode === 13)
+        document.getElementById('button1').click()"
+        disabled="disabled"
+        />
+          
+      <span class="button1" id="button1" onclick="submit()">Tak</span>
+
       <span class="button3" id="button3" onclick="newGame()">Nastupnaja para</span>
           
-      <span class="button2" id="button2" onclick="start()">Pajsci na lekcyju</span>  
-
-      <canvas id = "gameScreen" width="770" height="250"></canvas>
+      <span class="button2" id="button2" onclick="start()">Pajsci na lekcyju</span>
 
       <div class="curtains">     
         <img src="assets/curtain.png" id="curtain1" alt="">
         <img src="assets/curtain.png" id="curtain2" alt="">
       </div>
-      
+
       <div id = "gameOver">Kaniec lekcyi, adznaka: 0</div>  
 
-      </center>
+      </div>
+
+    <div id="warning-message">
+      Kali łaska, paviarnicie pryładu🔃
+    </div>
       <script  src="./script.js"></script>
 
   </body>
